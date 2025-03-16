@@ -32,9 +32,8 @@ This plugin is especially powerful when used in conjunction with Large Language 
 
 1.  **Open a Modified File:** Open any file that has been modified within your project.
 2.  **Generate Prompt:** Right-click within the editor window and select `Generate Code Review Prompt`.
-3.  **Copy Prompt:** A dialog box will appear with the generated prompt. Copy the content.
+3.  **Copy Prompt:** A dialog box will appear which will notify that the prompt has been copied to the clipboard.
 4.  **Use Prompt:**
-    * Paste the prompt into your code review tool (e.g., GitHub PR, GitLab MR).
     * Paste the prompt into an LLM interface for automated code review.
     * Share it with your team via messaging platforms or email.
 
