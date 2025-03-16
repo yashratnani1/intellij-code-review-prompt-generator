@@ -21,7 +21,7 @@ This plugin is especially powerful when used in conjunction with Large Language 
 
 ## Installation
 
-1.  **Download:** Download the plugin from the [Releases](https://github.com/yourusername/intellij-code-review-prompt-generator/releases) page.
+1.  **Download:** Download the plugin from the [Releases](https://github.com/yashratnani1/intellij-code-review-prompt-generator/releases) page.
 2.  **Install:**
     * In IntelliJ IDEA, go to `Settings` (or `Preferences` on macOS) -> `Plugins`.
     * Click the gear icon and select `Install Plugin from Disk...`.
