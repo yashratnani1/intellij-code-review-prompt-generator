@@ -1,7 +1,8 @@
 package com.example.demo.constants
 
 object PromptConstants {
-    const val promptPrefix = "**Objective:** Conduct a thorough code review to assess adherence to coding standards, code quality, potential runtime exceptions, and identify other potential issues.\n" +
+    const val promptPrefix = "**Objective:** Conduct a thorough code review to assess adherence to coding standards, " +
+            "code quality, potential runtime exceptions, and identify other potential issues.\n" +
             "\n" +
             "**Instructions:**\n" +
             "\n" +
@@ -9,21 +10,20 @@ object PromptConstants {
 
     const val promptSuffix = "\n" +
             "    ```\n" +
-            "    **File: [filename1]**\n" +
+            "\n Files which are required to be reviewed are structured as follows : \n" +
+            "    File: [filename1]\n" +
             "    ```\n" +
             "    ```[contents of filename1]```\n" +
             "\n" +
             "    ```\n" +
-            "    **File: [filename2]**\n" +
+            "    File: [filename2]\n" +
             "    ```\n" +
             "    ```[contents of filename2]```\n" +
             "\n" +
             "    ```\n" +
-            "    **File: [filename3]**\n" +
+            "    File: [filename3]\n" +
             "    ```\n" +
             "    ```[contents of filename3]```\n" +
-            "\n" +
-            "    ...(Add more files as needed)\n" +
             "\n" +
             "2.  **Provide file-specific review comments:**\n" +
             "\n" +

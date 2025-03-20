@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.yourdomain.llmcodereview</id>
-    <name>LLM Code Review</name>
+    <name>ReviewSage</name>
     <vendor email="yashratnani1@gmail.com" url="https://yourwebsite.com">Yash Ratnani</vendor>
     <description><![CDATA[
         This plugin integrates with IntelliJ IDEA to facilitate automated code reviews using a Language Learning Model (LLM). It analyzes changes in Java files and generates comprehensive review prompts, enhancing code quality and developer productivity.
@@ -8,9 +8,10 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.vcs</depends>
     <actions>
-        <action id="com.yourdomain.llmcodereview.LLMCodeReviewAction" class="com.example.demo.LLMCodeReviewAction"
-                text="Generate Code Review Prompt" description="Initiates an analysis of modified Java files to create detailed code review prompts, aiding developers in identifying potential issues and improvements.">
+        <group id="com.yourdomain.llmcodereview.LLMCodeReviewGroup" text="ReviewSage" description="ReviewSage Actions" popup="true">
+            <action id="com.yourdomain.llmcodereview.LLMCodeReviewAction" class="com.example.demo.LLMCodeReviewAction"
+                    text="Generate Code Review Prompt" description="Initiates an analysis of modified Java files to create detailed code review prompts, aiding developers in identifying potential issues and improvements."/>
             <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
-        </action>
+        </group>
     </actions>
 </idea-plugin>
