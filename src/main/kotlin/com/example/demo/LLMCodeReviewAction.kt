@@ -44,7 +44,11 @@ class LLMCodeReviewAction : AnAction() {
                 promptBuilder.append("File: ").append(file.name).append("\n")
                 try {
                     val fileContent = String(Files.readAllBytes(Paths.get(file.path)))
-                    promptBuilder.append("```java\n").append(fileContent).append("\n```\n\n")
+                    val lines = fileContent.lines()
+                    for ((lineNumber, line) in lines.withIndex()) {
+                        promptBuilder.append((lineNumber + 1).toString()).append(": ").append(line).append("\n")
+                    }
+                    promptBuilder.append("\n") // Add an extra newline between files
                 } catch (ex: IOException) {
                     promptBuilder.append("Error reading file: ").append(ex.message).append("\n\n")
                 }

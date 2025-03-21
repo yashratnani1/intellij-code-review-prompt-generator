@@ -13,17 +13,17 @@ object PromptConstants {
             "\n Files which are required to be reviewed are structured as follows : \n" +
             "    File: [filename1]\n" +
             "    ```\n" +
-            "    ```[contents of filename1]```\n" +
+            "    ```[contents of filename1 with each line including line number]```\n" +
             "\n" +
             "    ```\n" +
             "    File: [filename2]\n" +
             "    ```\n" +
-            "    ```[contents of filename2]```\n" +
+            "    ```[contents of filename2 with each line including line number]```\n" +
             "\n" +
             "    ```\n" +
             "    File: [filename3]\n" +
             "    ```\n" +
-            "    ```[contents of filename3]```\n" +
+            "    ```[contents of filename3 with each line including line number]```\n" +
             "\n" +
             "2.  **Provide file-specific review comments:**\n" +
             "\n" +
