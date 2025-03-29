@@ -8,11 +8,11 @@ import com.intellij.openapi.vcs.changes.Change
 import com.intellij.openapi.vcs.changes.ChangeListManager
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.ui.Messages
-import java.awt.Toolkit
-import java.awt.datatransfer.StringSelection
-import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.io.IOException
+import java.awt.Toolkit
+import java.awt.datatransfer.StringSelection
 import java.util.stream.Collectors
 
 class LLMCodeReviewAction : AnAction() {
@@ -37,7 +37,6 @@ class LLMCodeReviewAction : AnAction() {
 
         val promptBuilder = StringBuilder()
         promptBuilder.append("Review the following Code Changes. Act as a senior software engineer providing a detailed code review:\n\n")
-        promptBuilder.append(PromptConstants.promptPrefix)
         for (change in javaChanges) {
             val file = change.virtualFile
             if (file != null) {
@@ -49,15 +48,17 @@ class LLMCodeReviewAction : AnAction() {
                         promptBuilder.append((lineNumber + 1).toString()).append(": ").append(line).append("\n")
                     }
                     promptBuilder.append("\n") // Add an extra newline between files
+                    // Extract and append imported file contents
                 } catch (ex: IOException) {
                     promptBuilder.append("Error reading file: ").append(ex.message).append("\n\n")
                 }
             }
         }
+        promptBuilder.append(PromptConstants.promptPrefix)
         promptBuilder.append(PromptConstants.promptSuffix)
         val prompt = promptBuilder.toString()
         copyToClipboard(prompt)
-        Messages.showInfoMessage("Prompt copied to clipboard!", "LLM Code Review")
+        Messages.showInfoMessage("Prompt copied to clipboard!", "ReviewSage")
     }
 
     private fun copyToClipboard(text: String) {
