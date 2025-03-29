@@ -7,6 +7,9 @@
     ]]></description>
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.vcs</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.java</depends>
     <actions>
         <group id="com.yourdomain.llmcodereview.LLMCodeReviewGroup" text="ReviewSage" description="ReviewSage Actions" popup="true">
             <action id="com.yourdomain.llmcodereview.LLMCodeReviewAction" class="com.example.demo.LLMCodeReviewAction"
